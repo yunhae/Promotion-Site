@@ -1,0 +1,70 @@
+/* _______________ CSS 초기화 / 전역선택자 _______________  */
+* { margin: 0; padding: 0; }
+html,body { width: 100vw; height: 100vh;}
+body { 
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #000; color: #f7f8f9;
+}
+.title { font-family: 'DM Serif Display', serif; font-weight: 400;}
+.wrap { width: 100%; max-width: 1180px; margin: 0 auto; }
+
+/* _______________ FULL PAGE SETTING _______________  */
+.full_page {
+  width: 100vw; height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* _______________ HEADER _______________  */
+.header {
+  width: 100vw; height: 60px;
+  position: fixed;
+  top: 0; left: 0;
+}
+.header_txt {
+  font-size: 24px;
+  padding: 10px 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+}
+.building_img {
+  width: 100%; height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.building_img .building_txt h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.building_img .building_txt p {
+  font-size: 12px;
+}
+.building_img .bt_view {
+  font-size: 14px;
+  padding: 8px 25px;
+  /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); */
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#page01 .building_img { background-image: url(../images/ju_tablet.jpg); }
+#page02 .building_img { background-image: url(../images/); }
+#page03 .building_img { background-image: url(../images/); }
+#page04 .building_img { background-image: url(../images/); }
+
+#page01 .building_txt,#page03 .building_txt {
+  margin-top: 150px;
+  text-align: center;
+}
+#page02 .bt_view,#page04 .bt_view {
+  margin-bottom: 50px;
+}
+#page02 .building_img, #page04 .building_img {
+  justify-content: end;
+}
