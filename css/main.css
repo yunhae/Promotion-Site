@@ -1,13 +1,15 @@
 /* _______________ CSS 초기화 / 전역선택자 _______________  */
 * { margin: 0; padding: 0; }
-html,body { width: 100vw; height: 100vh;}
+html,body { width: 100vw; height: 100vh; }
 body { 
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #000; color: #f7f8f9;
+  overflow: hidden;
 }
+a { text-decoration: none; color: #f7f8f9; border: 0;}
 .title { font-family: 'DM Serif Display', serif; font-weight: 400;}
 .wrap { width: 100%; max-width: 1180px; margin: 0 auto; }
-
+.hidden { display: none; }
 /* _______________ FULL PAGE SETTING _______________  */
 .full_page {
   width: 100vw; height: 100vh;
@@ -22,6 +24,7 @@ body {
   width: 100vw; height: 60px;
   position: fixed;
   top: 0; left: 0;
+  z-index: 999;
 }
 .header_txt {
   font-size: 24px;
@@ -29,7 +32,10 @@ body {
   text-align: center;
   color: rgba(255, 255, 255, 0.3);
 }
-.building_img {
+
+/* _______________ BUILDING SECTION _______________  */
+
+.full_page .building_img {
   width: 100%; height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -41,9 +47,11 @@ body {
 .building_img .building_txt h2 {
   font-size: 24px;
   margin-bottom: 10px;
+  display: none;
 }
 .building_img .building_txt p {
   font-size: 12px;
+  opacity: 0;
 }
 .building_img .bt_view {
   font-size: 14px;
@@ -52,12 +60,19 @@ body {
   margin-top: 10px;
   cursor: pointer;
 }
+.building_img .bt_view_txt{
+  opacity: 0;
+}
 
-#page01 .building_img { background-image: url(../images/ju_tablet.jpg); }
-#page02 .building_img { background-image: url(../images/); }
-#page03 .building_img { background-image: url(../images/); }
-#page04 .building_img { background-image: url(../images/); }
+/* _____ BG IMG _____ */
+#page01 .building_img { background-image: url(../images/jubilee_mobile.jpg); }
+#page02 .building_img { background-image: url(../images/getty_mobile.jpg); }
+#page03 .building_img { background-image: url(../images/high_mobile.jpg); }
+#page04 .building_img { background-image: url(../images/oxford_mobile.jpg); }
 
+.building_img2 { display: none;}
+
+/* __________ PAGE 06 __________ */
 #page01 .building_txt,#page03 .building_txt {
   margin-top: 150px;
   text-align: center;
@@ -67,4 +82,146 @@ body {
 }
 #page02 .building_img, #page04 .building_img {
   justify-content: end;
+  text-align: center;
+}
+/* 첫페이지 애니메이션 */
+#page01 .building_txt .title {
+  display: block;
+  opacity: 0;
+  animation: txt_ani 5s;
+  animation-fill-mode: forwards;
+}
+#page01 .building_txt p {
+  opacity: 0;
+  animation: txt_ani 4s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+#page01 .bt_view_txt {
+  opacity: 0;
+  animation: txt_ani 4s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes txt_ani {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* _______________ IDEOLOGY SECTION _______________  */
+.ideology div {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.ideology div p:nth-child(2n) {
+  position: relative;
+  right: -100vw;
+}
+.ideology div p:not(:nth-child(2n)) {
+  position: relative;
+  left: -100vw;
+}
+.ideology p {
+  font-size: 32px;
+  text-align: center;
+}
+.ideology {
+  width: 100vw; height: 100vh;
+  position: relative;
+  z-index: 1;
+  top: 0; left: 0;
+}
+.ideology .page_intro {
+  width: 100%; height: 50vh;
+  position: absolute;
+  top: 25vh; left: 0;
+  background-color: #000;
+}
+.ideology .page_infor {
+  width: 100vw; height: 100vh;
+  text-align: center;
+  display: none;
+}
+.ideology h2 {
+  font-size: 32px;
+  margin: 50vh 0 50px;
+  display: none;
+}
+.ideology h4 {
+  width: 300px;
+  font-weight: 400;
+  margin: 20px auto;
+  display: none;
+}
+/* __________ PAGE 05 __________ */
+#page05 .grid_img {
+  background-image: url(../images/etc5.png);
+  animation: white_ani 15s infinite;
+}
+@keyframes white_ani {
+  0% { background-image: url(../images/etc5.jpg);}
+  10% { background-image: url(../images/getty5.jpg);}
+  25% { background-image: url(../images/getty5.jpg);}
+  30% { background-image: url(../images/high5.jpg);}
+  50% { background-image: url(../images/high5.jpg);}
+  55% { background-image: url(../images/jubilee4.jpg);}
+  80% { background-image: url(../images/jubilee4.jpg);}
+  85% { background-image: url(../images/etc5.jpg);}
+  100%{ background-image: url(../images/etc5.jpg);}
+}
+/* __________ PAGE 06 __________ */
+#page06 .page_infor{
+  height: 80vh;
+  margin-top: 20vh;
+}
+#page06 h2 { margin-top: 0;}
+
+
+/* __________ PAGE 05,7 __________ */
+#page05 .page_infor, #page07 .page_infor {
+  height: 100vh;
+}
+#page07 .grid_img{
+  background-image: url(../images/bg_grid_mibile.jpg);
+}
+#page05 .grid_img,#page07 .grid_img {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100vw; height: 100vh;
+  position: absolute;
+  top: 0; left: 0;
+  z-index: -1;
+}
+#page05 .page_infor .grit_txt,#page07 .page_infor .grit_txt {
+  width: 90vw; height: 50vh;
+  margin: 30vh auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#page05 .page_infor h2,#page07 .page_infor h2 {
+  margin-top: 0;
+}
+
+/* __________ PAGE 08 __________ */
+#page08 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#page08 img {
+  width: 100%;
+}
+#page08 ul:first-child { margin: 50px 0;}
+#page08 ul li {
+  font-size: 14px;
+  list-style: square;
+}
+#page08 ul li:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  list-style: none;
 }
