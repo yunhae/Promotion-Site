@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RichardMeier</title>
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./css/main.css">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- <meta http-equiv="refresh" content="5; url=./main.html"> -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    
+  </script>
+  <style>
+    body {
+      background-color: #fff;
+    }
+    section {
+      width: 100vw; height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 100px;
+      text-align: center;
+    }
+    .intro1 {
+      position: absolute;
+      left: 0; top: 0;
+      background-color: #fff;
+      background-image: url(./images/intro_gird1_1.png);
+      /* background-image: url(./images/intro_gird2_1.png); */
+      background-position: center;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      color: black;
+      animation: intro_ani 6s;
+      animation-fill-mode: forwards;
+      opacity: 1;
+    }
+    .intro2 {
+      background-color: #000;
+      background-image: url(./images/intro_gird1.png);
+      /* background-image: url(./images/intro_gird2.png); */
+      background-position: center;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+    @keyframes intro_ani {
+      0% { opacity: 1; }
+      95% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+  </style>
+</head>
+<body>
+  <section class="intro1"><h1 class="title">Richard Meier</h1></section>
+  <section class="intro2"><h1 class="title">Richard Meier</h1></section>
+</body>
+</html>
