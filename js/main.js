@@ -85,8 +85,11 @@ window.onload = function(){
       $('#page08 .awards').delay(2000).animate({opacity: 1},1500)
       $('#page08 .top_bt img').delay(3000).fadeIn(1500)
     }
+    
   })
-
+  if(matchMedia("screen and (min-width: 769px").matches) {
+    $('#page08 .meier img').attr('src','./images/MEIER1.jpg')
+  }
 // COLORBOX
   // 주빌리교회 컬러박스
   $(".view_popup1").colorbox({
@@ -120,6 +123,5 @@ window.onload = function(){
     title: false,
     fadeOut: 500
   });
-
 
 }
