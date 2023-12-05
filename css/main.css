@@ -8,7 +8,7 @@ body {
 }
 a { text-decoration: none; color: #f7f8f9; border: 0;}
 .title { font-family: 'DM Serif Display', serif; font-weight: 400;}
-.wrap { width: 100%; max-width: 1180px; margin: 0 auto; }
+.wrap { width: 100%; margin: 0 auto; }
 .hidden { display: none; }
 /* _______________ FULL PAGE SETTING _______________  */
 .full_page {
@@ -34,36 +34,7 @@ a { text-decoration: none; color: #f7f8f9; border: 0;}
   cursor: pointer;
 }
 /* _______________ INTRO _______________  */
-body {
-  background-color: #fff;
-  animation: intro_bg_ani 6s;
-  animation-fill-mode: forwards;
-}
-#intro h1 { font-size: 80px; text-align: center;}
-#intro {
-  background-image: url(../images/intro_gird1.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation: intro_ani 6s;
-  color: black;
-  animation-fill-mode: forwards;
-}
-@keyframes intro_bg_ani {
-  0% { background-color: #fff; }
-  100% { background-color: #000; }
-}
-@keyframes intro_ani {
-  0% { 
-    background-color: #fff;
-    background-image: url(../images/intro_grid.png);
-    color: #000;
-   }
-  100% { 
-    background-color: #000;
-    background-image: url(../images/intro_grid.png);
-    color: #fff;
-   }
-}
+#intro h1 { font-size: 80px; text-align: center; }
 
 /* _______________ SWIPER _______________  */
 .swiper {
@@ -266,6 +237,8 @@ body {
   width: 90vw;
   text-indent: 20px;
   opacity: 0;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 #page08 .profile {
   margin-bottom: 20px;
@@ -294,13 +267,13 @@ body {
   .swiper04 { background-image: url(../images/oxford_mobile.jpg); } 
 
   @keyframes white_ani {
-    0% {background-image: url(../images/white1.jpg);}
-    10% {background-image: url(../images/white2.jpg);}
-    40% {background-image: url(../images/white2.jpg);}
+    0% {background-image: url(../images/white_color01.jpg);}
+    10% {background-image: url(../images/white_color02.jpg);}
+    40% {background-image: url(../images/white_color02.jpg);}
     50% {background-image: url(../images/getty1.jpg);}
     80% {background-image: url(../images/getty1.jpg);}
-    90% {background-image: url(../images/white1.jpg);}
-    100% {background-image: url(../images/white1.jpg);}
+    90% {background-image: url(../images/white_color01.jpg);}
+    100% {background-image: url(../images/white_color01.jpg);}
   }
   /*  PAGE  */
   #page01 .building_txt,#page03 .building_txt {
@@ -318,7 +291,29 @@ body {
   #page08 .title { display: none;}
 
 }
-
+@media all and (min-width:320px) and (max-width:768px) {
+  #intro {
+    background-image: url(../images/intro_bg_mobile1.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100% 100%;
+    animation: intro_ani 6s;
+    color: black;
+    animation-fill-mode: forwards;
+  }
+  @keyframes intro_ani {
+    0% { 
+      background-color: #fff;
+      background-image: url(../images/intro_bg_mobile1.png);
+      color: #000;
+     }
+    100% { 
+      background-color: #000;
+      background-image: url(../images/intro_bg_mobile2.png);
+      color: #fff;
+     }
+  }
+}
 
 /* _____ 태블릿 미디어쿼리 _____ */
 @media all and (min-width:601px) and (max-width:768px) {
@@ -367,7 +362,7 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
   #page05 .grid_img {
-    background-image: url(../images/white_color2.png);
+    background-image: url(../images/white_color03.png);
   }
 
   .ideology h2 { font-size: 46px; margin-bottom: 0;}
@@ -402,6 +397,27 @@ body {
 /* _____ 저해상도 PC 미디어쿼리 _____ */
 @media all and (min-width:769px) {
   #intro .title { font-size: 140px; }
+  #intro {
+    background-image: url(../images/intro_bg_pc1.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100% 100%;
+    animation: intro_ani 6s;
+    color: black;
+    animation-fill-mode: forwards;
+  }
+  @keyframes intro_ani {
+    0% { 
+      background-color: #fff;
+      background-image: url(../images/intro_bg_pc1.png);
+      color: #000;
+     }
+    100% { 
+      background-color: #000;
+      background-image: url(../images/intro_bg_pc2.png);
+      color: #fff;
+     }
+  }
   .full_page .swiper-slide {
     flex-direction: row;
     justify-content: center;
@@ -465,7 +481,7 @@ body {
     font-size: 100px;
   }
   #page05 .grid_img {
-    background-image: url(../images/bg_white.png);
+    background-image: url(../images/white_color_pc1.png);
   }
   #page07 .grid_img{
     background-image: url(../images/bg_grid_pc.png);
@@ -521,14 +537,7 @@ body {
 }
 
 @media all and (min-width:1181px) {
-  .wrap {
-    max-width: 1180px;
-    margin: 0 auto;
-  }
-  .full_page {
-    max-width: 1180px;
-  }
-  
+
   .full_page .swiper-slide .building_img {
     width: 580px;
   }
@@ -536,8 +545,7 @@ body {
     width: 340px;
   }
   #page05 .grid_img {
-    max-width: 1180px;
-    background-image: url(../images/bg_white.png);
+    background-image: url(../images/white_color_pc2.jpg);
     background-size: 100% 100%;
   }
   #page06 .page_infor {
@@ -555,6 +563,7 @@ body {
     background-size: cover;
   }
   #page08 { display: flex; }
+  #page08 img { margin-top: 0;}
   #page08 .meier,#page08 .meier_txt { 
     width: 50%;
   }
